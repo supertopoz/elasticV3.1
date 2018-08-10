@@ -6,11 +6,30 @@ import { FilterContainer} from "./components/FilterContainer/FilterContainer";
 
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      clusterErrors: [
+        { 
+          name:"all clusters",
+          count: 10,
+          id: "allClusters"
+        }
+      ]
+    }
+  } 
+
+
+  componentWillMount(){
+  }
+
+
+
   render() {
     return (
       <div className="App">
         <Header />
-        <FilterContainer />
+        <FilterContainer clusterErrors={this.state.clusterErrors} />
         // Todo
         // Add header 
         // Add Filter block
