@@ -8,7 +8,7 @@ import { MiniCard } from './MiniCard';
 describe('Header', () => {
   test('is rendered', () => {
 
-   const clusterError = { 
+   const clusterErroru = { 
     name:"all clusters",
     count: 10,
     id: "allClusters"
