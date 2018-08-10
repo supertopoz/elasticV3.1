@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Header} from "./components/Header/Header";
-
+import { FilterContainer} from "./components/FilterContainer/FilterContainer";
 
 
 
@@ -10,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <FilterContainer />
         // Todo
         // Add header 
         // Add Filter block
