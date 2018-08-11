@@ -9,7 +9,7 @@ const ClusterBodyHeaderContainer = styled('div')`
   padding: 10px;
 `
 const ClusterBodyHeaderTitle = styled('div')`
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: left;
 `
 const ClusterBodyHeaderDeployment = styled('div')`
@@ -31,9 +31,9 @@ const ClusterBodyButton = styled('div')`
 export const ClusterBodyHeader = (props) => {
   return(
 	 <ClusterBodyHeaderContainer>
-      <ClusterBodyHeaderTitle>Name: Bob</ClusterBodyHeaderTitle>
+      <ClusterBodyHeaderTitle>{`Cluster Name: ${props.clusterName}`}</ClusterBodyHeaderTitle>
       <ClusterBodyHeaderDeployment>
-      <ClusterBodyButton>Deployed</ClusterBodyButton>
+      <ClusterBodyButton>{`Deployed ${props.snapshotsHealth} `}</ClusterBodyButton>
       </ClusterBodyHeaderDeployment>
     </ClusterBodyHeaderContainer>
    )

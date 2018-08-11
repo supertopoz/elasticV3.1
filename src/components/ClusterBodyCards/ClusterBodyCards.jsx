@@ -27,11 +27,14 @@ const ClusterBodyButton = styled('div')`
 const ClusterBodyCardHeader = styled('div')`
   font-size: 0.7rem;
   display: grid;
-  padding:10px;
+  padding-left:10px;
+  padding-right:10px;
   text-align: left;
   grid-template-columns: 3fr 1fr;
 `
-const ClusterBodyCardHeaderTitle = styled('div')``
+const ClusterBodyCardHeaderTitle = styled('div')`
+  padding-top: 10px;
+`
 const ClusterBodyCardHeaderIcon = styled('div')`
   text-align: right;
   font-size: 1rem;
@@ -47,7 +50,8 @@ const ClusterBodyCardDetails = styled('div')`
   @media (min-width: 700px) {grid-template-columns: 1fr;}
 `
 
-export const ClusterBodyCards = () => {
+export const ClusterBodyCards = (props) => {
+
 	return (
     <ClusterBodyCardsContainer>
       <ClusterBodyCard>
@@ -56,31 +60,39 @@ export const ClusterBodyCards = () => {
           <ClusterBodyCardHeaderIcon>♥</ClusterBodyCardHeaderIcon>
         </ClusterBodyCardHeader>
         <ClusterBodyCardDetails>
-            <div>Running</div>
-            <div>Master(1)</div>
-            <div>Monitoring</div>
+            <div>{`Running: ${props.cluster.isStopped}`}</div>
+            <div>{`Master(${props.cluster.master.count})  ${props.cluster.master.healthy}`}</div>
+            <div>{`Monitoring Enabled: ${props.cluster.monitoring.enabled}`}</div>
         </ClusterBodyCardDetails>       
       </ClusterBodyCard>
             <ClusterBodyCard>
         <ClusterBodyCardHeader>
-          <ClusterBodyCardHeaderTitle>Cluster Status</ClusterBodyCardHeaderTitle>
-          <ClusterBodyCardHeaderIcon>♥</ClusterBodyCardHeaderIcon>
+          <ClusterBodyCardHeaderTitle>{`Instance (${props.cluster.instances.count.total})`}</ClusterBodyCardHeaderTitle>
+          <ClusterBodyCardHeaderIcon>{`♥`}</ClusterBodyCardHeaderIcon>
         </ClusterBodyCardHeader>
-        <ClusterBodyCardDetails></ClusterBodyCardDetails>       
+        <ClusterBodyCardDetails>
+            <div>{`Running: ${props.cluster.instances.count.running}`}</div>
+        </ClusterBodyCardDetails>       
       </ClusterBodyCard>
             <ClusterBodyCard>
         <ClusterBodyCardHeader>
-          <ClusterBodyCardHeaderTitle>Cluster Status</ClusterBodyCardHeaderTitle>
+          <ClusterBodyCardHeaderTitle>{`Shards (${props.cluster.shards.count.total})`}</ClusterBodyCardHeaderTitle>
           <ClusterBodyCardHeaderIcon>♥</ClusterBodyCardHeaderIcon>
         </ClusterBodyCardHeader>
-        <ClusterBodyCardDetails></ClusterBodyCardDetails>       
+        <ClusterBodyCardDetails>
+           <div>{`Available: ${JSON.stringify(props.cluster.shards.count.available)}`}</div>
+        </ClusterBodyCardDetails>       
       </ClusterBodyCard>
             <ClusterBodyCard>
         <ClusterBodyCardHeader>
-          <ClusterBodyCardHeaderTitle>Cluster Status</ClusterBodyCardHeaderTitle>
+          <ClusterBodyCardHeaderTitle>{`Snapshots (${JSON.stringify(props.cluster.snapshots.count.total)})`}</ClusterBodyCardHeaderTitle>
           <ClusterBodyCardHeaderIcon>♥</ClusterBodyCardHeaderIcon>
         </ClusterBodyCardHeader>
-        <ClusterBodyCardDetails></ClusterBodyCardDetails>       
+        <ClusterBodyCardDetails>
+          <div>{`Latest: ${props.cluster.snapshots.latest.time}`}</div>
+          <div>{`Success: ${props.cluster.snapshots.latest.success}`}</div>
+          
+        </ClusterBodyCardDetails>       
       </ClusterBodyCard>
      </ClusterBodyCardsContainer>
 		)

@@ -20,15 +20,11 @@ const ClusterBodyFooterKibana = styled('div')`
 const ClusterBodyFooterDetails = styled('div')`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  font-size: 0.7rem;
 `
-const ClusterBodyFooterDetailsUser = styled('div')`
-font-size: 0.7rem;
-`
-const ClusterBodyFooterDetailsVersion = styled('div')`
-font-size: 0.7rem;
-`
+const ClusterBodyFooterDetailsUser = styled('div')``
+const ClusterBodyFooterDetailsVersion = styled('div')``
 const ClusterBodyFooterDetailsRegion = styled('div')`
-font-size: 0.7rem;
 `
 
 const ClusterBodyButton = styled('div')`
@@ -41,14 +37,14 @@ const ClusterBodyButton = styled('div')`
   cursor:pointer;
 `
 
-export const ClusterBodyFooter = () => {
+export const ClusterBodyFooter = (props) => {
     return (
      <ClusterBodyFooterContainer>
-     <ClusterBodyFooterKibana> <ClusterBodyButton>Create Kabana</ClusterBodyButton></ClusterBodyFooterKibana>
+     <ClusterBodyFooterKibana> <ClusterBodyButton>{`Kibana: ${props.kibana}`}</ClusterBodyButton></ClusterBodyFooterKibana>
      <ClusterBodyFooterDetails>
-        <ClusterBodyFooterDetailsUser>USER ID: 407920</ClusterBodyFooterDetailsUser>
-        <ClusterBodyFooterDetailsVersion>Version 1.7.2</ClusterBodyFooterDetailsVersion>
-         <ClusterBodyFooterDetailsRegion>Region: us-east-1</ClusterBodyFooterDetailsRegion>
+        <ClusterBodyFooterDetailsUser>{`USER ID: ${props.userId}`}</ClusterBodyFooterDetailsUser>
+        <ClusterBodyFooterDetailsVersion>{`VERSION: ${props.version}`}</ClusterBodyFooterDetailsVersion>
+         <ClusterBodyFooterDetailsRegion>{`REGION: ${props.region}`}</ClusterBodyFooterDetailsRegion>
      </ClusterBodyFooterDetails>
      </ClusterBodyFooterContainer>
      )

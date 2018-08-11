@@ -8,27 +8,35 @@ import { ClusterBodyFooter } from "../ClusterBodyFooter/ClusterBodyFooter";
 
 const ClusterCountainer = styled('div')`
   background: white;
-  min-height: 50px;
+  max-height: 700px;
   padding: 10px;
-  grid-template-rows: 2fr 10fr;
+  grid-gap: 10px;
+  grid-template-rows: 30px 1fr;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   font-size: 2em;
   display: grid;
 `
-const ClusterBodyBlock = styled('div')`
-  padding: 10px;
-  height: 200px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+const ClusterContainerInner = styled('div')`
+  overflow: auto;
+  max-height: 500px;
   display: grid;
-  grid-template-rows: 1fr 5fr 1fr;
+  grid-gap: 10px;
 `
 
+const ClusterBodyBlock = styled('div')`
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  display: grid;
+  background: white;
+  width: 95%;
+  @media (max-width: 499px) {grid-template-rows: 1fr 5fr 1fr;}
+  @media (min-width: 500px) { grid-template-rows: 40px 1fr 50px; }
+  @media (min-width: 700px) { grid-template-rows: 40px 1fr 25px; }
 
-
-
-
+`
 const FilterBlockBody = styled('div')`
   overflow: auto;
   display: grid;
@@ -45,19 +53,36 @@ const Title = styled('div')`
 `
 export const ClusterInfoContainer = (props) => {
   const filter = props.clusters[0];
+  
   let title = '';
+  let filterName = ''
+  let clusters = [];
   try {
-      title = Object.keys(filter)[0].split('_').join(' ');
+      filterName = Object.keys(filter)[0]
+      title = filterName.split('_').join(' ');
+      clusters = props.clusters[0][filterName].clusters;
   } catch (e){}
-  console.log(title)
+
 	return (
 		<ClusterCountainer>
     <Title>{title}</Title>
-    <ClusterBodyBlock>
-    <ClusterBodyHeader/>
-    <ClusterBodyCards/>
-    <ClusterBodyFooter/>
-     </ClusterBodyBlock>
+    <ClusterContainerInner>
+    { clusters.map((cluster, index) => {
+      return (
+        <ClusterBodyBlock key={`cluster-body-${index}`}>
+        <ClusterBodyHeader clusterName={cluster.displayName} snapshotsHealth={ cluster.snapshots.healthy}/>
+        <ClusterBodyCards  cluster={cluster}/>
+        <ClusterBodyFooter 
+          kibana={cluster.kibana.enabled} 
+          userId={cluster.user.id} 
+          version={cluster.plan.version}
+          region={cluster.regionId}
+        />
+        </ClusterBodyBlock>
+      )
+
+    })}
+    </ClusterContainerInner>
 		</ClusterCountainer>
 	)
 }

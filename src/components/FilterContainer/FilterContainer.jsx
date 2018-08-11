@@ -5,14 +5,12 @@ import { MiniCard } from "../MiniCard/MiniCard";
 
 const FilterBlock = styled('div')`
   background: white;
-  min-height: 50px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   color:white;
   font-size: 2em;
   display: grid;
-  grid-template-rows: 1fr 3fr;
-   @media (max-width: 499px) {grid-template-rows: 1fr 5fr;}
+  @media (max-width: 499px) {grid-template-rows: 30px 1fr;}
 `
 
 const FilterBlockHeader = styled('div')`
@@ -22,14 +20,12 @@ const FilterBlockHeader = styled('div')`
 `
 
 const FilterBlockBody = styled('div')`
-  overflow: auto;
   display: grid;
   grid-gap: 10px;
   padding: 15px;
-  grid-template-columns: repeat(7, 1fr);
   @media (max-width: 499px) {grid-template-columns: repeat(3, 1fr);}
-  @media (min-width: 500px) {}
-  @media (min-width: 700px) {}
+  @media (min-width: 500px) {  grid-template-columns: repeat(6, 1fr);}
+  @media (min-width: 700px) {  grid-template-columns: repeat(6, 1fr);}
  
 `
 export const FilterContainer = (props) => {
