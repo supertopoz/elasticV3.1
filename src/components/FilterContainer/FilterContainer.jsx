@@ -10,7 +10,9 @@ const FilterBlock = styled('div')`
   color:white;
   font-size: 2em;
   display: grid;
-  @media (max-width: 499px) {grid-template-rows: 30px 1fr;}
+  @media (max-width: 499px) {
+    max-height: 300px;
+  }
 `
 
 const FilterBlockHeader = styled('div')`

@@ -20,7 +20,7 @@
 @media (max-width: 499px) {
 .App {
   		width: 100%;
-  		grid-template-rows: 1fr 4fr 5fr;
+  		grid-template-rows: 1fr 236px auto;
 	}
 }
 

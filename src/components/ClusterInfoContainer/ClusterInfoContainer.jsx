@@ -8,7 +8,9 @@ import { ClusterBodyFooter } from "../ClusterBodyFooter/ClusterBodyFooter";
 
 const ClusterCountainer = styled('div')`
   background: white;
-  max-height: 700px;
+  @media (max-width: 499px) {}
+  @media (min-width: 500px) { max-height: 300px}
+  @media (min-width: 700px) { max-hight: 500px }
   padding: 10px;
   grid-gap: 10px;
   grid-template-rows: 30px 1fr;
@@ -19,8 +21,9 @@ const ClusterCountainer = styled('div')`
 `
 
 const ClusterContainerInner = styled('div')`
-  overflow: auto;
-  max-height: 500px;
+  
+  @media (min-width: 500px) { overflow: auto;}
+  @media (min-width: 700px) { overflow: auto; }
   display: grid;
   grid-gap: 10px;
 `
@@ -32,7 +35,8 @@ const ClusterBodyBlock = styled('div')`
   display: grid;
   background: white;
   width: 95%;
-  @media (max-width: 499px) {grid-template-rows: 1fr 5fr 1fr;}
+  grid-gap: 5px;
+  @media (max-width: 499px) { grid-template-rows: 1fr 5fr 1fr;}
   @media (min-width: 500px) { grid-template-rows: 40px 1fr 50px; }
   @media (min-width: 700px) { grid-template-rows: 40px 1fr 25px; }
 

@@ -4,7 +4,7 @@ exports[`Header is rendered 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "sc-bxivhb ewRPoY",
+      "class": "sc-bxivhb gxsIFa",
     },
     "children": Array [
       Object {
@@ -24,7 +24,7 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": Object {
           "attribs": Object {
-            "class": "sc-EHOje bGaCrK",
+            "class": "sc-EHOje bibiRa",
           },
           "children": Array [
             Object {
@@ -158,7 +158,7 @@ initialize {
       },
       Object {
         "attribs": Object {
-          "class": "sc-EHOje bGaCrK",
+          "class": "sc-EHOje bibiRa",
         },
         "children": Array [
           Object {
