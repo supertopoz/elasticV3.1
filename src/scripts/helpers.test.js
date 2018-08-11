@@ -8,9 +8,7 @@ describe('Check Model is correct shape', () => {
    beforeAll(() => {
   	model = uiModel(dataSet);
    });
-   afterAll(() => {
-   	console.log(model)
-   })
+   afterAll(() => {})
 
   test('should get total number of clusters', () => {
   	const result = model.countClusters(); 
@@ -18,22 +16,22 @@ describe('Check Model is correct shape', () => {
   });
   test('should get unhealthy clusters', () => {
   	const result = model.unhealthyClusters(); 
-    expect(result.Unhealthy).toEqual(17);
+    expect(result.Unhealthy.count).toEqual(17);
   });
   test('should get shard errors', () => {
   	const result = model.shardErrors(); 
-    expect(result.Shard_Errors).toEqual(1);
+    expect(result.Shard_Errors.count).toEqual(1);
   });
   test('should get rollbacks', () => {
   	const result = model.rollback(); 
-    expect(result.Rollbacks).toEqual(1);
+    expect(result.Rollbacks.count).toEqual(1);
   });  
   test('should get build step failed', () => {
   	const result = model.buildStepFailed(); 
-    expect(result.Build_Step_Failed).toEqual(1);
+    expect(result.Build_Step_Failed.count).toEqual(1);
   });  
   test('should get snapshot failed', () => {
   	const result = model.snapshotFailed(); 
-    expect(result.Snapshot_failed).toEqual(16);
+    expect(result.Snapshot_failed.count).toEqual(16);
   });
 });

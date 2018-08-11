@@ -19,21 +19,24 @@ const Card = styled('div')`
 `
 
 const FilterBlockBodyHeader = styled('div')`
-  font-size: 0.9rem;
+  min-height: 30px;
+  font-size: 0.7rem;
 `
 const FilterBlockBodyNumber = styled('div')`
   font-size: 2rem;
 `
 
 export const MiniCard = (props) => {
-   
+    const item = Object.keys(props.cardData)[0]
+    const title = item.split("_").join(" ")
+    console.log(props)
   return (
      <Card onClick={()=> console.log(props.cardData.id)}>
         <FilterBlockBodyHeader>
-        {props.cardData.name}
+        {title}
         </FilterBlockBodyHeader>
         <FilterBlockBodyNumber>
-        {props.cardData.count}
+        {props.cardData[item].count}
         </FilterBlockBodyNumber>
       </Card>
     )
