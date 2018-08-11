@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import PropTypes from "prop-types";
-
+import { Heart } from "../Icons/Icons";
 
 const ClusterBodyCardsContainer = styled('div')`
   display: grid;
@@ -45,30 +45,30 @@ const ClusterBodyCardDetails = styled('div')`
   display: grid;
   padding: 10px;
   grid-gap: 2px;
-  @media (max-width: 499px) {grid-template-columns: 1fr 1fr 1fr;}
+  @media (max-width: 499px) {grid-template-columns: 1fr 1fr;}
   @media (min-width: 500px) { grid-template-columns: 1fr;}
   @media (min-width: 700px) {grid-template-columns: 1fr;}
 `
 
 export const ClusterBodyCards = (props) => {
-
+     const instanceHealth = !(props.cluster.instances.count.total - props.cluster.instances.count.running);
 	return (
     <ClusterBodyCardsContainer>
       <ClusterBodyCard>
         <ClusterBodyCardHeader>
           <ClusterBodyCardHeaderTitle>Cluster Status</ClusterBodyCardHeaderTitle>
-          <ClusterBodyCardHeaderIcon>♥</ClusterBodyCardHeaderIcon>
+          <ClusterBodyCardHeaderIcon><Heart bolee={props.cluster.healthy}/></ClusterBodyCardHeaderIcon>
         </ClusterBodyCardHeader>
         <ClusterBodyCardDetails>
-            <div>{`Running: ${props.cluster.isStopped}`}</div>
-            <div>{`Master(${props.cluster.master.count})  ${props.cluster.master.healthy}`}</div>
-            <div>{`Monitoring Enabled: ${props.cluster.monitoring.enabled}`}</div>
+            <div>Running: <Heart bolee={props.cluster.isStopped}/></div>
+            <div>{`Master(${props.cluster.master.count})`} <Heart bolee={props.cluster.master.healthy}/></div>
+            <div>Monitoring Enabled: <Heart bolee={props.cluster.monitoring.enabled}/></div>
         </ClusterBodyCardDetails>       
       </ClusterBodyCard>
             <ClusterBodyCard>
         <ClusterBodyCardHeader>
           <ClusterBodyCardHeaderTitle>{`Instance (${props.cluster.instances.count.total})`}</ClusterBodyCardHeaderTitle>
-          <ClusterBodyCardHeaderIcon>{`♥`}</ClusterBodyCardHeaderIcon>
+          <ClusterBodyCardHeaderIcon><Heart bolee={instanceHealth}/></ClusterBodyCardHeaderIcon>
         </ClusterBodyCardHeader>
         <ClusterBodyCardDetails>
             <div>{`Running: ${props.cluster.instances.count.running}`}</div>
@@ -77,7 +77,7 @@ export const ClusterBodyCards = (props) => {
             <ClusterBodyCard>
         <ClusterBodyCardHeader>
           <ClusterBodyCardHeaderTitle>{`Shards (${props.cluster.shards.count.total})`}</ClusterBodyCardHeaderTitle>
-          <ClusterBodyCardHeaderIcon>♥</ClusterBodyCardHeaderIcon>
+          <ClusterBodyCardHeaderIcon><Heart bolee={props.cluster.shards.healthy}/></ClusterBodyCardHeaderIcon>
         </ClusterBodyCardHeader>
         <ClusterBodyCardDetails>
            <div>{`Available: ${JSON.stringify(props.cluster.shards.count.available)}`}</div>
@@ -86,14 +86,18 @@ export const ClusterBodyCards = (props) => {
             <ClusterBodyCard>
         <ClusterBodyCardHeader>
           <ClusterBodyCardHeaderTitle>{`Snapshots (${JSON.stringify(props.cluster.snapshots.count.total)})`}</ClusterBodyCardHeaderTitle>
-          <ClusterBodyCardHeaderIcon>♥</ClusterBodyCardHeaderIcon>
+          <ClusterBodyCardHeaderIcon><Heart bolee={props.cluster.snapshots.healthy}/></ClusterBodyCardHeaderIcon>
         </ClusterBodyCardHeader>
         <ClusterBodyCardDetails>
           <div>{`Latest: ${props.cluster.snapshots.latest.time}`}</div>
-          <div>{`Success: ${props.cluster.snapshots.latest.success}`}</div>
+          <div>Last snapshot completed: <Heart bolee={props.cluster.snapshots.latest.success}/></div>
           
         </ClusterBodyCardDetails>       
       </ClusterBodyCard>
      </ClusterBodyCardsContainer>
 		)
 }
+
+ClusterBodyCards.propTypes = {
+  cluster: PropTypes.object
+};

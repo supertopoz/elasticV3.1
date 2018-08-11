@@ -12,7 +12,7 @@ const ClusterBodyHeaderContainer = styled('div')`
 const ClusterBodyHeaderTitle = styled('div')`
   font-size: 0.8rem;
   text-align: left;
-    color: white;
+  color: white;
 `
 const ClusterBodyHeaderDeployment = styled('div')`
   font-size: 0.7rem;

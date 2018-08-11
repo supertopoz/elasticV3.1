@@ -18,7 +18,6 @@ describe('Header', () => {
    const component = render(
       <FilterContainer clusterErrors={clusterErrors} />
     );
-
     expect(component)
       .toMatchSnapshot();
   });

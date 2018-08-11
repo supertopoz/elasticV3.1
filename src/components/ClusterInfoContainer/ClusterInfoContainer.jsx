@@ -6,7 +6,7 @@ import { ClusterBodyCards } from "../ClusterBodyCards/ClusterBodyCards";
 import { ClusterBodyFooter } from "../ClusterBodyFooter/ClusterBodyFooter";
 
 
-const ClusterCountainer = styled('div')`
+export const ClusterCountainer = styled('div')`
   background: white;
   @media (max-width: 499px) {}
   @media (min-width: 500px) { max-height: 300px}
@@ -20,7 +20,7 @@ const ClusterCountainer = styled('div')`
   display: grid;
 `
 
-const ClusterContainerInner = styled('div')`
+export const ClusterContainerInner = styled('div')`
   
   @media (min-width: 500px) { overflow: auto;}
   @media (min-width: 700px) { overflow: auto; }
@@ -28,7 +28,7 @@ const ClusterContainerInner = styled('div')`
   grid-gap: 10px;
 `
 
-const ClusterBodyBlock = styled('div')`
+export const ClusterBodyBlock = styled('div')`
   margin: 0 auto;
   padding: 10px;
   border: 1px solid lightgrey;
@@ -41,7 +41,7 @@ const ClusterBodyBlock = styled('div')`
   @media (min-width: 700px) { grid-template-rows: 40px 1fr 25px; }
 
 `
-const FilterBlockBody = styled('div')`
+export const FilterBlockBody = styled('div')`
   overflow: auto;
   display: grid;
   grid-gap: 10px;
@@ -57,7 +57,6 @@ const Title = styled('div')`
 `
 export const ClusterInfoContainer = (props) => {
   const filter = props.clusters[0];
-  
   let title = '';
   let filterName = ''
   let clusters = [];
@@ -91,6 +90,6 @@ export const ClusterInfoContainer = (props) => {
 	)
 }
 
-// ClusterInfoContainer.propTypes = {
-//   clusterErrors: PropTypes.array
-// };
+ClusterInfoContainer.propTypes = {
+  cluster: PropTypes.object
+};

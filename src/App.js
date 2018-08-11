@@ -36,7 +36,6 @@ class App extends Component {
   }
 
   componentWillMount(){
-    console.log('Mounting')
     const url = "https://gist.githubusercontent.com/bevacqua/1225b9d6ae1842e99373c0057f5176b4/raw/dbfbe16c9b685af371827e4a550dde1188fa0dee/clusters.json";
     axios.get(url).then(data => {
       const model = uiModel(data.data.record);

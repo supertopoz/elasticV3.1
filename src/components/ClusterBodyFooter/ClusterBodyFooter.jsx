@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components'
 import PropTypes from "prop-types";
 
-const ClusterBodyFooterContainer = styled('div')`
+import { Heart } from "../Icons/Icons";
+
+export const ClusterBodyFooterContainer = styled('div')`
   padding-top: 10px;
   display: grid;
   grid-gap: 10px;
@@ -13,21 +15,20 @@ const ClusterBodyFooterContainer = styled('div')`
   font-size: 1rem;
   text-align: left;
 `
-const ClusterBodyFooterKibana = styled('div')`
+export const ClusterBodyFooterKibana = styled('div')`
   font-size: 0.7rem;
 
 `
-const ClusterBodyFooterDetails = styled('div')`
+export const ClusterBodyFooterDetails = styled('div')`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   font-size: 0.7rem;
 `
-const ClusterBodyFooterDetailsUser = styled('div')``
-const ClusterBodyFooterDetailsVersion = styled('div')``
-const ClusterBodyFooterDetailsRegion = styled('div')`
-`
+export const ClusterBodyFooterDetailsUser = styled('div')``
+export const ClusterBodyFooterDetailsVersion = styled('div')``
+export const ClusterBodyFooterDetailsRegion = styled('div')``
 
-const ClusterBodyButton = styled('div')`
+export const ClusterBodyButton = styled('div')`
   border: 1px solid orange;
   padding: 2px;
   width:100px;
@@ -40,7 +41,7 @@ const ClusterBodyButton = styled('div')`
 export const ClusterBodyFooter = (props) => {
     return (
      <ClusterBodyFooterContainer>
-     <ClusterBodyFooterKibana> <ClusterBodyButton>{`Kibana: ${props.kibana}`}</ClusterBodyButton></ClusterBodyFooterKibana>
+     <ClusterBodyFooterKibana> <ClusterBodyButton>Kibana: <Heart bolee={props.kibana}/></ClusterBodyButton></ClusterBodyFooterKibana>
      <ClusterBodyFooterDetails>
         <ClusterBodyFooterDetailsUser>{`USER ID: ${props.userId}`}</ClusterBodyFooterDetailsUser>
         <ClusterBodyFooterDetailsVersion>{`VERSION: ${props.version}`}</ClusterBodyFooterDetailsVersion>
