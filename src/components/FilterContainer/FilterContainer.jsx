@@ -38,7 +38,7 @@ export const FilterContainer = (props) => {
 		  <FilterBlockHeader>FILTER CLUSTERS</FilterBlockHeader>
       <FilterBlockBody>
       { props.clusterErrors.map((item, index) => 
-        <MiniCard key={`card- ${index}`} cardData={item} />
+        <MiniCard key={`card- ${index}`} cardData={item} listFunc={props.filter} />
         )}
       </FilterBlockBody>
 		</FilterBlock>

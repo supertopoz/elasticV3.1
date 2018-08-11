@@ -12,7 +12,7 @@ describe('Check Model is correct shape', () => {
 
   test('should get total number of clusters', () => {
   	const result = model.countClusters(); 
-    expect(result.All_Clusters).toEqual({"count": 150});
+    expect(result.All_Clusters.count).toEqual(150);
   });
   test('should get unhealthy clusters', () => {
   	const result = model.unhealthyClusters(); 

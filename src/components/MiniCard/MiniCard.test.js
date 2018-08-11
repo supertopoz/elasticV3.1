@@ -3,18 +3,14 @@ import { configure, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
-import { MiniCard } from './MiniCard';
+import { MiniCard, shallow } from './MiniCard';
 
 describe('Header', () => {
   test('is rendered', () => {
 
-   const clusterErroru = { 
-    name:"all clusters",
-    count: 10,
-    id: "allClusters"
-    } 
-
-
+   const clusterError = { 
+    "All_Clusters": {count: 150}
+    }
     const component = render(
       <MiniCard cardData={clusterError} />
     );

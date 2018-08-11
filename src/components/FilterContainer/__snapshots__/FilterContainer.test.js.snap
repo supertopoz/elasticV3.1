@@ -34,11 +34,11 @@ initialize {
               "children": Array [
                 Object {
                   "attribs": Object {
-                    "class": "sc-bwzfXH gavNRs",
+                    "class": "sc-bwzfXH huUtDP",
                   },
                   "children": Array [
                     Object {
-                      "data": "all clusters",
+                      "data": "name",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
@@ -51,15 +51,7 @@ initialize {
                     "attribs": Object {
                       "class": "sc-htpNat jhPcgS",
                     },
-                    "children": Array [
-                      Object {
-                        "data": "10",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
+                    "children": Array [],
                     "name": "div",
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": null,
@@ -87,26 +79,18 @@ initialize {
                   "attribs": Object {
                     "class": "sc-htpNat jhPcgS",
                   },
-                  "children": Array [
-                    Object {
-                      "data": "10",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
+                  "children": Array [],
                   "name": "div",
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": null,
                   "parent": [Circular],
                   "prev": Object {
                     "attribs": Object {
-                      "class": "sc-bwzfXH gavNRs",
+                      "class": "sc-bwzfXH huUtDP",
                     },
                     "children": Array [
                       Object {
-                        "data": "all clusters",
+                        "data": "name",
                         "next": null,
                         "parent": [Circular],
                         "prev": null,
@@ -184,11 +168,11 @@ initialize {
             "children": Array [
               Object {
                 "attribs": Object {
-                  "class": "sc-bwzfXH gavNRs",
+                  "class": "sc-bwzfXH huUtDP",
                 },
                 "children": Array [
                   Object {
-                    "data": "all clusters",
+                    "data": "name",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -201,15 +185,7 @@ initialize {
                   "attribs": Object {
                     "class": "sc-htpNat jhPcgS",
                   },
-                  "children": Array [
-                    Object {
-                      "data": "10",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
+                  "children": Array [],
                   "name": "div",
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": null,
@@ -237,26 +213,18 @@ initialize {
                 "attribs": Object {
                   "class": "sc-htpNat jhPcgS",
                 },
-                "children": Array [
-                  Object {
-                    "data": "10",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
+                "children": Array [],
                 "name": "div",
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": null,
                 "parent": [Circular],
                 "prev": Object {
                   "attribs": Object {
-                    "class": "sc-bwzfXH gavNRs",
+                    "class": "sc-bwzfXH huUtDP",
                   },
                   "children": Array [
                     Object {
-                      "data": "all clusters",
+                      "data": "name",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,

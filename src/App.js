@@ -12,8 +12,10 @@ class App extends Component {
   constructor(){
     super();
      this.state = {
-      buttons: []
+      buttons: [],
+      dataView: []
     };
+  this.getClusterList = this.getClusterList.bind(this)
   } 
 
   createButtons(model ){
@@ -27,7 +29,13 @@ class App extends Component {
       this.setState({buttons})
   }
 
+  getClusterList(cluster){
+    const dataView = this.state.buttons.filter(item => item[cluster])
+    this.setState({dataView})
+  }
+
   componentWillMount(){
+    console.log('Mounting')
     const url = "https://gist.githubusercontent.com/bevacqua/1225b9d6ae1842e99373c0057f5176b4/raw/dbfbe16c9b685af371827e4a550dde1188fa0dee/clusters.json";
     axios.get(url).then(data => {
       const model = uiModel(data.data.record);
@@ -38,6 +46,7 @@ class App extends Component {
       model.snapshotFailed();
       model.rollback();
       model.buildStepFailed();
+      console.log(model)
       this.createButtons(model)
     })
   }
@@ -45,7 +54,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <FilterContainer clusterErrors={this.state.buttons} />
+        <FilterContainer clusterErrors={this.state.buttons} filter={ this.getClusterList }/>
         {// Todo
         // set state for filter block clicker
         // Add get data based on filter Card clicks

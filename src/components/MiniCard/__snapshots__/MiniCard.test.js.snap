@@ -9,11 +9,11 @@ initialize {
     "children": Array [
       Object {
         "attribs": Object {
-          "class": "sc-bwzfXH gavNRs",
+          "class": "sc-bwzfXH huUtDP",
         },
         "children": Array [
           Object {
-            "data": "all clusters",
+            "data": "All Clusters",
             "next": null,
             "parent": [Circular],
             "prev": null,
@@ -28,7 +28,7 @@ initialize {
           },
           "children": Array [
             Object {
-              "data": "10",
+              "data": "150",
               "next": null,
               "parent": [Circular],
               "prev": null,
@@ -64,7 +64,7 @@ initialize {
         },
         "children": Array [
           Object {
-            "data": "10",
+            "data": "150",
             "next": null,
             "parent": [Circular],
             "prev": null,
@@ -77,11 +77,11 @@ initialize {
         "parent": [Circular],
         "prev": Object {
           "attribs": Object {
-            "class": "sc-bwzfXH gavNRs",
+            "class": "sc-bwzfXH huUtDP",
           },
           "children": Array [
             Object {
-              "data": "all clusters",
+              "data": "All Clusters",
               "next": null,
               "parent": [Circular],
               "prev": null,

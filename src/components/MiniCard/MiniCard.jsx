@@ -27,11 +27,10 @@ const FilterBlockBodyNumber = styled('div')`
 `
 
 export const MiniCard = (props) => {
-    const item = Object.keys(props.cardData)[0]
-    const title = item.split("_").join(" ")
-    console.log(props)
+  const item = Object.keys(props.cardData)[0]
+  const title = item.split("_").join(" ")
   return (
-     <Card onClick={()=> console.log(props.cardData.id)}>
+     <Card onClick={() => props.listFunc(item)}>
         <FilterBlockBodyHeader>
         {title}
         </FilterBlockBodyHeader>
