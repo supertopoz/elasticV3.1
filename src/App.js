@@ -5,6 +5,7 @@ import './App.css';
 import {uiModel} from "./scripts/helpers.js";
 import {Header} from "./components/Header/Header";
 import { FilterContainer} from "./components/FilterContainer/FilterContainer";
+import { ClusterInfoContainer} from "./components/ClusterInfoContainer/ClusterInfoContainer";
 
 
 
@@ -46,7 +47,6 @@ class App extends Component {
       model.snapshotFailed();
       model.rollback();
       model.buildStepFailed();
-      console.log(model)
       this.createButtons(model)
     })
   }
@@ -55,11 +55,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <FilterContainer clusterErrors={this.state.buttons} filter={ this.getClusterList }/>
-        {// Todo
-        // set state for filter block clicker
-        // Add get data based on filter Card clicks
-        // ouput data to screen 
-        }
+        <ClusterInfoContainer clusters={this.state.dataView} />
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>

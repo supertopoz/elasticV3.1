@@ -32,7 +32,7 @@ export const getShardErrors = (data) => ({
     shardErrors: function() {
       const clusters = data.filter((cluster) => cluster.shards.healthy === false )
       this.Shard_Errors.count = clusters.length;
-      this.Shard_Errors.cluster = clusters;
+      this.Shard_Errors.clusters = clusters;
       return this;
     }
 })
