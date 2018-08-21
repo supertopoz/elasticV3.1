@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import PropTypes from "prop-types";
 
 const ClusterBodyHeaderContainer = styled('div')`
@@ -29,14 +29,13 @@ const ClusterBodyButton = styled('div')`
   cursor:pointer;
 `
 
-
 export const ClusterBodyHeader = (props) => {
   return(
-	 <ClusterBodyHeaderContainer>
+    <ClusterBodyHeaderContainer>
       <ClusterBodyHeaderTitle>{`Cluster Name: ${props.clusterName}`}</ClusterBodyHeaderTitle>
       <ClusterBodyHeaderDeployment>
-      <ClusterBodyButton>{`Deployed ${props.snapshotsHealth} `}</ClusterBodyButton>
+        <ClusterBodyButton>{`Deployed ${props.snapshotsHealth} `}</ClusterBodyButton>
       </ClusterBodyHeaderDeployment>
     </ClusterBodyHeaderContainer>
-   )
+  );
 }

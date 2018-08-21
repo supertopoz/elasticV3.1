@@ -13,101 +13,12 @@ initialize {
         },
         "children": Array [
           Object {
-            "data": " ",
-            "next": Object {
-              "attribs": Object {
-                "class": "sc-htoDjs lklzZk",
-              },
-              "children": Array [
-                Object {
-                  "data": "Kibana: ",
-                  "next": Object {
-                    "attribs": Object {
-                      "class": "sc-bwzfXH dTOmGS",
-                    },
-                    "children": Array [
-                      Object {
-                        "data": "✘",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "span",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": [Circular],
-                    "type": "tag",
-                    "x-attribsNamespace": Object {
-                      "class": undefined,
-                    },
-                    "x-attribsPrefix": Object {
-                      "class": undefined,
-                    },
-                  },
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-                Object {
-                  "attribs": Object {
-                    "class": "sc-bwzfXH dTOmGS",
-                  },
-                  "children": Array [
-                    Object {
-                      "data": "✘",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "span",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": Object {
-                    "data": "Kibana: ",
-                    "next": [Circular],
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                  "type": "tag",
-                  "x-attribsNamespace": Object {
-                    "class": undefined,
-                  },
-                  "x-attribsPrefix": Object {
-                    "class": undefined,
-                  },
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": null,
-              "parent": [Circular],
-              "prev": [Circular],
-              "type": "tag",
-              "x-attribsNamespace": Object {
-                "class": undefined,
-              },
-              "x-attribsPrefix": Object {
-                "class": undefined,
-              },
-            },
-            "parent": [Circular],
-            "prev": null,
-            "type": "text",
-          },
-          Object {
             "attribs": Object {
               "class": "sc-htoDjs lklzZk",
             },
             "children": Array [
               Object {
-                "data": "Kibana: ",
+                "data": "Kibana:",
                 "next": Object {
                   "attribs": Object {
                     "class": "sc-bwzfXH dTOmGS",
@@ -156,7 +67,7 @@ initialize {
                 "next": null,
                 "parent": [Circular],
                 "prev": Object {
-                  "data": "Kibana: ",
+                  "data": "Kibana:",
                   "next": [Circular],
                   "parent": [Circular],
                   "prev": null,
@@ -175,13 +86,7 @@ initialize {
             "namespace": "http://www.w3.org/1999/xhtml",
             "next": null,
             "parent": [Circular],
-            "prev": Object {
-              "data": " ",
-              "next": [Circular],
-              "parent": [Circular],
-              "prev": null,
-              "type": "text",
-            },
+            "prev": null,
             "type": "tag",
             "x-attribsNamespace": Object {
               "class": undefined,
@@ -694,101 +599,12 @@ initialize {
           },
           "children": Array [
             Object {
-              "data": " ",
-              "next": Object {
-                "attribs": Object {
-                  "class": "sc-htoDjs lklzZk",
-                },
-                "children": Array [
-                  Object {
-                    "data": "Kibana: ",
-                    "next": Object {
-                      "attribs": Object {
-                        "class": "sc-bwzfXH dTOmGS",
-                      },
-                      "children": Array [
-                        Object {
-                          "data": "✘",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "span",
-                      "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": [Circular],
-                      "type": "tag",
-                      "x-attribsNamespace": Object {
-                        "class": undefined,
-                      },
-                      "x-attribsPrefix": Object {
-                        "class": undefined,
-                      },
-                    },
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                  Object {
-                    "attribs": Object {
-                      "class": "sc-bwzfXH dTOmGS",
-                    },
-                    "children": Array [
-                      Object {
-                        "data": "✘",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "span",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": Object {
-                      "data": "Kibana: ",
-                      "next": [Circular],
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                    "type": "tag",
-                    "x-attribsNamespace": Object {
-                      "class": undefined,
-                    },
-                    "x-attribsPrefix": Object {
-                      "class": undefined,
-                    },
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": null,
-                "parent": [Circular],
-                "prev": [Circular],
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
-              },
-              "parent": [Circular],
-              "prev": null,
-              "type": "text",
-            },
-            Object {
               "attribs": Object {
                 "class": "sc-htoDjs lklzZk",
               },
               "children": Array [
                 Object {
-                  "data": "Kibana: ",
+                  "data": "Kibana:",
                   "next": Object {
                     "attribs": Object {
                       "class": "sc-bwzfXH dTOmGS",
@@ -837,7 +653,7 @@ initialize {
                   "next": null,
                   "parent": [Circular],
                   "prev": Object {
-                    "data": "Kibana: ",
+                    "data": "Kibana:",
                     "next": [Circular],
                     "parent": [Circular],
                     "prev": null,
@@ -856,13 +672,7 @@ initialize {
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": null,
               "parent": [Circular],
-              "prev": Object {
-                "data": " ",
-                "next": [Circular],
-                "parent": [Circular],
-                "prev": null,
-                "type": "text",
-              },
+              "prev": null,
               "type": "tag",
               "x-attribsNamespace": Object {
                 "class": undefined,

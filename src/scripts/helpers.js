@@ -14,7 +14,7 @@ export const getClusterCount = (data) => ({
 
 export const getUnhealthyClusters = (data) => ({
     unhealthyClusters: function() {
-      const clusters =  data.filter((cluster) => !cluster.healthy )
+      const clusters =  data.filter((cluster) => !cluster.healthy );
       this.Unhealthy.count = clusters.length;
       this.Unhealthy.clusters = clusters;
       return this;
@@ -23,7 +23,7 @@ export const getUnhealthyClusters = (data) => ({
 
 export const getSnapshotFailed = (data) => ({
     snapshotFailed: function() {
-      const clusters = data.filter((cluster) => !cluster.snapshots.healthy )
+      const clusters = data.filter((cluster) => !cluster.snapshots.healthy );
       this.Snapshot_failed.count = clusters.length;
       this.Snapshot_failed.clusters = clusters;
       return this;
@@ -32,7 +32,7 @@ export const getSnapshotFailed = (data) => ({
 
 export const getShardErrors = (data) => ({
     shardErrors: function() {
-      const clusters = data.filter((cluster) => !cluster.shards.healthy )
+      const clusters = data.filter((cluster) => !cluster.shards.healthy );
       this.Shard_Errors.count = clusters.length;
       this.Shard_Errors.clusters = clusters;
       return this;
@@ -41,12 +41,12 @@ export const getShardErrors = (data) => ({
 
 const configStepLookup = (cluster, term) => {
    return cluster.plan.configurationSteps
-   .filter(item => item.type.indexOf(term) >= 0)
+   .filter(item => item.type.indexOf(term) >= 0);
 }
 
 export const getRollBacks = (data) => ({
     rollback: function() {
-      const rollbacks = data.filter((cluster) => configStepLookup(cluster, 'rollback').length > 0)
+      const rollbacks = data.filter((cluster) => configStepLookup(cluster, 'rollback').length > 0);
       this.Rollbacks.count = rollbacks.length;
       this.Rollbacks.clusters = rollbacks;
       return this;
@@ -55,7 +55,7 @@ export const getRollBacks = (data) => ({
 
 export const getBuildStepFailed = (data) => ({
     buildStepFailed: function() {
-      const failed = data.filter((cluster) => configStepLookup(cluster, 'error').length > 0)
+      const failed = data.filter((cluster) => configStepLookup(cluster, 'error').length > 0);
       this.Build_Step_Failed.count = failed.length;
       this.Build_Step_Failed.clusters = failed;
       return this;
@@ -89,7 +89,7 @@ export const uiModel = (data) =>{
       const obj = {};
       obj[name] = item[1]
       if(typeof item[1] !== 'function') arc.push(obj) 
-        return arc
+        return arc;
       },[])
       return buttons;
   }
@@ -107,6 +107,8 @@ export const uiModel = (data) =>{
           model.rollback();
           model.buildStepFailed();
           resolve(model);
-        }) 
+        }).catch(error => {
+          reject(error);
+        })
     })
   }

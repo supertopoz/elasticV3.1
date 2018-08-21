@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import PropTypes from "prop-types";
 
 import { Heart } from "../Icons/Icons";
@@ -39,14 +39,18 @@ export const ClusterBodyButton = styled('div')`
 `
 
 export const ClusterBodyFooter = (props) => {
-    return (
-     <ClusterBodyFooterContainer>
-     <ClusterBodyFooterKibana> <ClusterBodyButton>Kibana: <Heart bolee={props.kibana}/></ClusterBodyButton></ClusterBodyFooterKibana>
-     <ClusterBodyFooterDetails>
+  return (
+    <ClusterBodyFooterContainer>
+      <ClusterBodyFooterKibana>
+        <ClusterBodyButton>Kibana: 
+          <Heart bolee={props.kibana}/>
+        </ClusterBodyButton>
+      </ClusterBodyFooterKibana>
+      <ClusterBodyFooterDetails>
         <ClusterBodyFooterDetailsUser>{`USER ID: ${props.userId}`}</ClusterBodyFooterDetailsUser>
         <ClusterBodyFooterDetailsVersion>{`VERSION: ${props.version}`}</ClusterBodyFooterDetailsVersion>
-         <ClusterBodyFooterDetailsRegion>{`REGION: ${props.region}`}</ClusterBodyFooterDetailsRegion>
-     </ClusterBodyFooterDetails>
-     </ClusterBodyFooterContainer>
-     )
+        <ClusterBodyFooterDetailsRegion>{`REGION: ${props.region}`}</ClusterBodyFooterDetailsRegion>
+      </ClusterBodyFooterDetails>
+    </ClusterBodyFooterContainer>
+  );
 }
